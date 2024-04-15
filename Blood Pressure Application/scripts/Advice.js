@@ -126,6 +126,7 @@ function writeUpperAdvice(ctx, level) {
 	adviceLine2 = "This usually isn't a problem, although you could feel dizzy.";
   }
 	//display blood pressure level 
+  ctx.font = "20px Arial"; //set the font 
   ctx.fillText("Your blood pressure level is " + level +
     ".", 25, 440);
   //display adviceLine1
