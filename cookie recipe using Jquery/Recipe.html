@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<!--
+   Author:   Amanda Martel
+   Date:     9/18/2020  
+   
+   Filename: Recipe.html
+   Description: HTML5 page for CDS 2610: Recipe Assignment(javaScript)
+   Program will allow user to input serving size and recipie will calculate each new ingredient amount needed for the recipe. 
+-->
+<meta charset="utf-8">
+	
+<!-- code to link to external stylesheet -->	
+<link href="style.css" rel="stylesheet">
+<!-- Title element of webpage -->
+<title>Shortbread Cookies Recipe</title> 
+<!-- link to jQuery library --> 
+<script src="jquery-3.5.1.min.js"></script>	
+</head>
+
+<body>
+	<!--h1 element-->
+	<h1>Shortbread Cookies Recipe</h1> 
+	
+	<!--begin paragraphs -->
+	   <p class="intro">This simple and satisfying, melt in your mouth shortbread cookies recipe you'll quite likely find irresistible!</p>
+	
+	
+	 
+	<!-- create form element for user to input amount of servings -->
+	<!-- label -->
+	<label for="servings">Servings:</label>
+    <!-- input box -->
+    <input type="text" id="serving" name="name" required
+       minlength="1" maxlength="3">
+	
+	<!-- create button for user to submit number of servings -->
+	<input type="button" id="button" value="Submit">
+
+	<!-- h4 elements -->
+	<h4>Servings:</h4><p><span id="originalServing">16</span> cookies</p>
+	
+	<!-- author--> 
+	<h4>Author: Amanda Martel</h4>
+	
+	<!--h2 element-->
+	<h2>Ingredients</h2>
+	
+	<!-- create table for ingredients -->
+	<!-- each amount has id -->
+	   <table>
+		  <tr> 
+		<td><span id="butter">10</span> tbsp unsalted butter</td>
+		<td><span id="flour">1 1/2</span> cups all-purpose flour</td>
+		  </tr>
+		  <tr> 
+        <td><span id="sugar">1/2</span> cup confectioners' sugar</td>
+		<td><span id="salt">1/2</span> teaspoon kosher salt (optional)</td>	  
+		  </tr>
+	    <td><span id="vanilla">1/2</span> teaspoon pure vanilla extract</td>
+		   
+	   </table>
+
+	
+	<!--h2 element-->
+	<h2>Instructions</h2>
+	
+	<!--create ordered list with numbers for instructions-->
+	   <ol>
+	      <li>In a stand mixer fitted with a paddle attachment, beat butter and vanilla extract until creamed.</li>
+	      <li>Add confectioners’ sugar and salt; mix until combined.</li>
+	      <li>Scrape bowl down and add flour while beating on low. Scrape bowl once more and mix until combined.</li>
+	      <li>Shape the dough into a rectangular prism, wrap in plastic and chill until firm. At least an hour.</li>
+	      <li>Preheat oven to 350F. Use a sharp knife to cut 1/2 inch thick slices.</li>
+	      <li>Place slices, spaced at least an inch apart onto a baking sheet lined with a silicone mat or parchment paper.</li>
+	      <li>Use a fork or skewer to indent a pattern onto the top.</li>
+	      <li>Bake for about 10 minutes, rotating baking sheet in the oven halfway through.</li>
+	      <li>Transfer to a wire sheet to cool.</li>
+	   </ol>
+	
+	<!--h2 element-->
+	<h2>Notes</h2>
+	
+	<!--create a bulleted list for notes-->
+	<ul>
+	   <li>The cookie dough can be made well in advance. It keeps for about a week in the fridge and a month in the freezer. Make sure to wrap very well and allow to warm up just enough to cut. </li>
+	   <li>If your butter isn't room temp just cut the sticks into a few slices and microwave on 50% power in 5 second bursts. Flip the butter with every burst.</li>
+	   <li>Liven these up with your favorite toasted nuts and spices for extra crunch and flavor.</li>
+	   <li>The dots on the bottom can be in any pattern you'd like, so have fun trying different things out and by all means get the kids to help it you have little ones around.</li></ul>
+	
+	<!--h2 element-->
+	<h2>Nutrition</h2>
+	
+	<!--create paragraph for nutrition information-->
+	   <p class="nutrition">Serving: 31g | Calories: 168kcal | Carbohydrates: 18.3g | Protein: 1.6g | Fat: 9.8g | Saturated Fat: 2.9g | Polyunsaturated Fat: 3.5g | Monounsaturated Fat: 2.6g | Cholesterol: 13.6mg | Sodium: 109mg | Potassium: 27mg | Fiber: 0.6g | Sugar: 7g | Vitamin A: 160IU | Calcium: 5mg | Iron: 0.4mg</p>
+	
+	
+	
+	
+</body>
+  <!-- link to JavaScript file --> 
+  <script src="Recipe.js"></script>
+</html>

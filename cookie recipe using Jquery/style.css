@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+Author:   Amanda Martel
+Date:     9/18/2020
+
+Filename: style.css
+Stylesheet for Recipe.html
+Program will allow user to input serving size and recipie will calculate each new ingredient amount needed for the recipe.
+*/
+
+/*body*/
+body {
+	font-family: Tahoma;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+}
+
+/* headings */
+h1 {
+	margin-bottom: 2px;	
+	padding-top: 20px;
+}
+
+h2, h4 {
+	margin-bottom: 0px;
+}
+
+
+/* paragraphs */ 
+.intro {
+	font-style: italic;
+	font-size: small;
+}
+
+#author {
+	text-decoration: underline;
+	color: blue;
+}
+
+p {
+	margin-top: 0px;
+}
+
+.nutrition {
+	font-size: small; 
+}
+
+/* list items */
+ul, ol {
+	margin-top: 0px;
+}
+
+
+
+
