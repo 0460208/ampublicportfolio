@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Create a New Observation {% endblock %}</h1>
+
+<form method="post">
+  <div class="form-group">
+      <input type="text" name="birdhouse"
+              placeholder="Birdhouse Name" class="form-control"
+              value="{{ request.form['birdhouse'] }}"></input>
+  </div>
+  <div class="form-group">
+      <textarea name="obdate" placeholder="Date"
+                class="form-control">{{ request.form['obdate'] }}</textarea>
+  </div>
+  <div class="form-group">
+      <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Active Species
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Eastern Bluebird</a>
+    <a class="dropdown-item" href="#">Tree Swallow</a>
+    <a class="dropdown-item" href="#">House Wren</a>
+    <a class="dropdown-item" href="#">Brown-Headed Cowbird</a>
+    <a class="dropdown-item" href="#">Unknown</a>
+    <a class="dropdown-item" href="#">Other</a>
+  </div>
+</div>
+
+
+  </div>
+
+  <div class="form-group">
+      <textarea name="eggs" placeholder="Number of Eggs"
+                class="form-control">{{ request.form['eggs'] }}</textarea>
+  </div>
+  <div class="form-group">
+      <textarea name="living" placeholder="Number of Living Young"
+                class="form-control">{{ request.form['living'] }}</textarea>
+  </div>
+  </div>
+  <div class="form-group">
+      <textarea name="dead" placeholder="Number of Dead Young"
+                class="form-control">{{ request.form['dead'] }}</textarea>
+  </div>
+  <div class="form-group">
+      <textarea name="comments" placeholder="Comments"
+                class="form-control">{{ request.form['comments'] }}</textarea>
+  </div>
+  <div class="form-group">
+     <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endblock %}
