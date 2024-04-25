@@ -1,0 +1,104 @@
+<?php
+include 'includes/core.php';
+include 'includes/connection.php';
+date_default_timezone_set('America/New_York');
+error_reporting(E_ERROR | E_PARSE);
+
+if(loggedin()) {
+$_SESSION['Login_username'] = getuserfield('Login_username');
+$accountID = $_SESSION['Login_account_id'];
+
+$query = "SELECT * FROM `Accounts` WHERE `Account_id` = '".$accountID."'";
+if (!$result = mysqli_query($link, $query))
+{
+   $result = 0;
+   echo ('Error executing query in Employeemaintenance: ' . mysqli_errno($link)." - ".mysqli_error($link)."<BR>");
+}
+else
+{
+$row = mysqli_fetch_array($result,MYSQLI_BOTH);
+}
+
+//putting account table columns in variables 
+$firstName = $row['Account_firstname'];
+$lastName = $row['Account_lastname'];
+$email = $row['Account_email_address'];
+$address = $row['Account_address1'];
+$city = $row['Account_city'];
+$state = $row['Account_state_region'];
+$zip = $row['Account_postal_code'];
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Harry's Hot Sauce</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link href="css/layout.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+<?php include 'includes/header.php'; ?>
+
+
+<div id="body-wrapper">
+
+<p class="titles">Employee Maintenance</p>
+
+<? 
+//get the next employee number 
+$query2 = "SELECT MAX(Employee_number) FROM `Employee`";
+if (!$query_run2 = mysqli_query($link, $query2))
+{
+   $query_run2 = 0;
+   $employeeNumber = null;
+}
+else 
+{
+$row2 = mysqli_fetch_array($query_run2,MYSQLI_BOTH);
+$employeeNumber = $row2[0];
+}
+
+if (is_null($employeeNumber))
+{$employeeNumber = 1001;}
+else 
+{$employeeNumber++;}
+
+//build select combo for names 
+$query1 "SELECT Account_lastname, Account_firstname, Account_middlename, Account_id FROM `Accounts` order by 1,2,3,4";
+if (!$query_run1 = mysqli_query($link, $query1))
+{
+   $query_run1 = 0;
+   echo ('Error executing query1 in Employeemaintenance: ' . mysqli_errno($link)." - ".mysqli_error($link)."<BR>");
+}
+else 
+{
+$row1 = mysqli_fetch_array($query_run1,MYSQLI_BOTH);
+$namesbox='<select name="Names" id="combo">';
+$namesbox='<option value=0>' . ' '. '</option>';
+$namesbox='<option value="' . $row1['Account_id'] . '">' . $row1['Account_lastname'] . ', ' .$row1['Account_firstname'] . ' ('.$row1['Account_id'] .') ' . '</option>';
+}
+while ($row = mysqli_fetch_array($query_run1,MYSQLI_BOTH))
+{
+   $namesbox='<option value="' . $row1['Account_id'] . '">' . $row1['Account_lastname'] . ', ' .$row1['Account_firstname'] . ' ('.$row1['Account_id'] .') ' . '</option>';
+}
+$namesbox.='</select>';
+mysqli_free_result($query_run1);
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
